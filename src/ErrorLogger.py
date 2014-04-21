@@ -1,5 +1,7 @@
 class ErrorLogger:
-  # Logs errors to a file
-  file = open("output.txt")
-  file.write("TESTING")
-  file.close
+
+  def log( self, loggingString ):
+    # Logs errors to a file
+    file = open("output.txt", 'w')
+    file.write("TESTING")
+    file.close
