@@ -4,14 +4,19 @@ class ErrorLogger:
 
   def getInstance():
     # Our singleton "constructor"
-    if instance is None :
-      instance = ErrorLogger()
-      instance.fileHandle = open("output.txt", 'w')
-    return instance
+    if ErrorLogger.instance is None :
+      ErrorLogger.instance = ErrorLogger()
+      ErrorLogger.instance.fileHandle = open("output.txt", 'w')
+    return ErrorLogger.instance
     
   # Making the functions static... fucking python
   getInstance = staticmethod(getInstance)
 
   def log( self, loggingString ):
     # Logs errors to a file
-    file.write(loggingString)
+    self.fileHandle.write(loggingString)
+
+  def cleanup(self):
+    print "Cleaning up"
+    self.fileHandle.close()
+    ErrorLogger.instance = None

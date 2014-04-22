@@ -4,11 +4,15 @@ print "Testing..."
 
 # Testing logger
 print "Testing logger"
-log = ErrorLogger()
+log = ErrorLogger.getInstance()
+otherLog = ErrorLogger.getInstance()
 log.log("TESTSTR")
+otherLog.log("OTHER")
+log.cleanup()
+ 
 file = open("output.txt", 'r')
 test = file.read()
-assert "TESTSTR" == test
+assert "TESTSTROTHER" == test
 print "Logger passed"
 
 
