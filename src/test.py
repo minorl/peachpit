@@ -33,7 +33,7 @@ print "Testing our visitor"
 visitor1 = ValidateSales()
 visitor2 = GeneratePTImport()
 print "Should say hello 1"
-sales.visitSales(visitor1)
+sales.acceptVisitor(visitor1)
 print "should say hello 2"
-sales.visitSales(visitor2)
+sales.acceptVisitor(visitor2)
 print "Testing our visitor complete"

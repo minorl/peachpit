@@ -8,4 +8,4 @@ class Sales:
 
   def acceptVisitor(self, visitor):
     # visitor should be a Visitor class
-    visitor.visitSales(this)
+    visitor.visitSales(self)

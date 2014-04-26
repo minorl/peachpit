@@ -2,7 +2,7 @@ class ErrorLogger:
   # Singleton that provides logging to a file
   instance = None
 
-  def getInstance(self):
+  def getInstance():
     # Our singleton "constructor"
     if ErrorLogger.instance is None :
       ErrorLogger.instance = ErrorLogger()
