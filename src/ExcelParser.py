@@ -8,7 +8,8 @@ class ExcelParser(Parser):
     # import is a python keyword Leslie
     # dateRange is a string
     # Returns Sales class
-    print "Function not yet implemented"
+    dictionary = {'leslie' : 'sucks', 'paul' : 'awesome'}
+    return Sales(dictionary)
 
   def importDay(salesFile):
     # salesFile is a file

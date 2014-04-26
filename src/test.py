@@ -17,3 +17,9 @@ print "Logger passed"
 
 # Can't test to see if an object is of a Type in python so can not test
 # the factory yet
+
+print "Testing ExcelParser sales creation"
+parser = ExcelParser()
+sales = parser.importRange("DEBUG TEXT")
+assert sales.LineItem['paul'] == 'awesome'
+assert sales.LineItem['leslie'] == 'sucks'
