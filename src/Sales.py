@@ -8,4 +8,4 @@ class Sales:
 
   def acceptVisitor(self, visitor):
     # visitor should be a Visitor class
-    print "Function not yet implemented"
+    visitor.visitSales(this)

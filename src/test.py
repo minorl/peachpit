@@ -2,6 +2,8 @@
 # Testing framework
 from ErrorLogger import ErrorLogger
 from ExcelParser import ExcelParser
+from ValidateSales import ValidateSales
+from GeneratePTImport import GeneratePTImport
 print "Testing..."
 
 # Testing logger
@@ -26,3 +28,12 @@ sales = parser.importRange("DEBUG TEXT")
 assert sales.LineItem['paul'] == 'awesome'
 assert sales.LineItem['leslie'] == 'sucks'
 print "Testing ExcelParser salse creation passed"
+
+print "Testing our visitor"
+visitor1 = ValidateSales()
+visitor2 = GeneratePTImport()
+print "Should say hello 1"
+sales.visitSales(visitor1)
+print "should say hello 2"
+sales.visitSales(visitor2)
+print "Testing our visitor complete"
