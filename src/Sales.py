@@ -6,6 +6,6 @@ class Sales:
     # Dictionary is a dictionary of whatever leslie wants it to be
     self.LineItem = dictionary
 
-  def acceptVisitor(visitor):
+  def acceptVisitor(self, visitor):
     # visitor should be a Visitor class
     print "Function not yet implemented"

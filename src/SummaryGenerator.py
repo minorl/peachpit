@@ -1,9 +1,9 @@
 class SummaryGenerator:
 
-  def summarize(errorLog):
+  def summarize(self, errorLog):
     # error log should be a file
     print "Function not implemented"
 
-  def openFile(fileHandle):
+  def openFile(self, fileHandle):
     # Filename is a file
     print "Function not implemented"
