@@ -1,5 +1,7 @@
+#!/usr/bin/python
 # Testing framework
 from ErrorLogger import ErrorLogger
+from ExcelParser import ExcelParser
 print "Testing..."
 
 # Testing logger
@@ -23,3 +25,4 @@ parser = ExcelParser()
 sales = parser.importRange("DEBUG TEXT")
 assert sales.LineItem['paul'] == 'awesome'
 assert sales.LineItem['leslie'] == 'sucks'
+print "Testing ExcelParser salse creation passed"
