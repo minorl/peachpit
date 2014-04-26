@@ -15,4 +15,5 @@ test = file.read()
 assert "TESTSTROTHER" == test
 print "Logger passed"
 
-
+# Can't test to see if an object is of a Type in python so can not test
+# the factory yet
