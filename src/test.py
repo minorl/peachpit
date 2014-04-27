@@ -25,9 +25,9 @@ print "Logger passed"
 print "Testing ExcelParser sales creation"
 parser = ExcelParser()
 sales = parser.importRange("DEBUG TEXT")
-assert sales.LineItem['paul'] == 'awesome'
-assert sales.LineItem['leslie'] == 'sucks'
-print "Testing ExcelParser salse creation passed"
+assert sales.LineItem[0][0] == '10'
+assert sales.LineItem[0][3] == '41000'
+print "Testing ExcelParser sales creation passed"
 
 print "Testing our visitor"
 visitor1 = ValidateSales()
