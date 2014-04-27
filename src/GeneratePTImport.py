@@ -4,4 +4,8 @@ class GeneratePTImport(Visitor):
 
   def visitSales(self, sales):
     # sales is a Sales object
-    print "hello 2"
+    for line in sales.LineItem :
+      (number, date, reference, account, description, amount) = line
+      # There is a cooler way to do this but fuck it
+      print number + "," + date + "," + reference + "," + account + \
+            "," + description + "," + amount
