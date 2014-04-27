@@ -34,6 +34,6 @@ visitor1 = ValidateSales()
 visitor2 = GeneratePTImport()
 print "Should say hello 1"
 sales.acceptVisitor(visitor1)
-print "should say hello 2"
+print "Appending peachpit.txt"
 sales.acceptVisitor(visitor2)
 print "Testing our visitor complete"

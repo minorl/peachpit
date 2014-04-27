@@ -10,7 +10,8 @@ class ExcelParser(Parser):
     # import is a python keyword Leslie
     # dateRange is a string
     # Returns Sales class
-    entryList = [("10", "1/20/2014", "14WK04", "41000", "Food", "-741.63")] 
+    entryList = [("10", "1/20/2014", "14WK04", "41000", "Food", "-741.63"),
+                 ("11", "1/21/2014", "14WK04", "41001", "Butt", "-741.64")] 
     return Sales(entryList)
 
   def importDay(self, salesFile):
