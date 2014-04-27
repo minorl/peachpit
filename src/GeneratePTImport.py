@@ -4,8 +4,12 @@ class GeneratePTImport(Visitor):
 
   def visitSales(self, sales):
     # sales is a Sales object
+
+    # Opens file and appends it, this is bad but I am lazy
+    fileHandle = open("peachpit.txt", 'a')
     for line in sales.LineItem :
       (number, date, reference, account, description, amount) = line
       # There is a cooler way to do this but fuck it
-      print number + "," + date + "," + reference + "," + account + \
-            "," + description + "," + amount
+      fileHandle.write(number + "," + date + "," + reference + "," + account + \
+            "," + description + "," + amount + "\n")
+    fileHandle.close()
