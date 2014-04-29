@@ -3,3 +3,4 @@ class Factory:
 
   def createParser(self, storeName):
     # storeName is a string 
+    print "Abstract function?"

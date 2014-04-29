@@ -1,4 +1,5 @@
-class excelParserFactory(Factory):
+from Factory import Factory
+class ExcelParserFactory(Factory):
   # Inherited from factory
   
   def createParser(self, StoreName):
