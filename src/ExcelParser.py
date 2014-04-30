@@ -7,37 +7,48 @@ from datetime import *
 class ExcelParser(Parser):
   # Inherited from Parser
 
+  #Things like individual handling rules should be stored
+  # here, like path names per franchise, etc
+  #This would be pulled from db
   parsingFunctions = {}
   importRules = []
-  storeNum = 0
+
+  storeNum = ''
+  refString = ''
+
+  def __init__(self, storeName, ref):
+    self.storeNum = storeName
+    self.refString = ref
 
   def importRange(self, dateRange):
     # import is a python keyword Leslie
     # dateRange is a string
-    # Returns Sales class
 
     start = datetime.strptime(dateRange[0], "%m/%d/%y")
     end = datetime.strptime(dateRange[1], "%m/%d/%y")
 
+    #the directory as well as formatting info would be in DB
+    salesDir = '../sampleData/A/'
+    filePrefix = self.storeNum +' - Daily - '
+
+    #header row for import file
     entryList=[("Number of Lines", "Date", "Reference", "G/L Account", "Description", "Amount")]
 
+    #number of days in range
     difference = end - start
-    # print difference.days
-    datelist = []
-    # datelist = [start - timedelta(days=x) for x in range(0, difference.days)+1]
+
+    #open and process each day in day range
     for i in range(0, difference.days+1):
-      # datelist.append(start + timedelta(days=i))
-      entryList += self.importDay('sales/'+self.storeNum +' - Daily - '+(start+timedelta(days=i)).strftime("%Y%m%d")+".CSV")
-    # print datelist
-    return Sales(entryList)
+      entryList += self.importDay(salesDir + filePrefix+(start+timedelta(days=i)).strftime("%Y%m%d")+".CSV")
+
+    return Sales(entryList, self.storeNum, self.refString)
 
 
   def importDay(self, salesFile):
-    # salesFile is a file
+    # salesFile is a filename
+    # Returns Sales class
 
     entryList = []
-        # File Handling ##########################################################
-    #filename = '556 - Daily - 20140121.CSV'
 
     number = sum(1 for row in csv.reader( open(salesFile) ) )
     with open(salesFile, 'rb') as f:

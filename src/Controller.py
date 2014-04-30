@@ -8,6 +8,6 @@ class Controller:
     # location and dates are strings
     print "Function not implemented"
 
-  def importLOcations(self, names, dates):
+  def importLocations(self, names, dates):
     # names is list and dates are strings
     print "Function not implemented"
